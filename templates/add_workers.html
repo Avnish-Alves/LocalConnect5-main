@@ -9,120 +9,116 @@
 </head>
 <body>
 
-    <div class="container">
-        <aside>
-           <div class="top">
-             <div class="logo">
-               <h2>C <span class="danger">Local Connect</span> </h2>
-             </div>
-             <div class="close" id="close_btn">
-              <span class="material-symbols-sharp">
-                close
-                </span>
-             </div>
-           </div>
-           <!-- end top -->
-            <div class="sidebar">
-  
-              <a href="/dashboard" >
-                <span class="material-symbols-sharp">grid_view </span>
-                <h3>Dashbord</h3>
-             </a>
-             <a href="#" class="active">
-              <span class="material-symbols-sharp">person_outline </span>
-              <h3>Register workers</h3>
-             <a href="#" >
-                <span class="material-symbols-sharp">person_outline </span>
-                <h3>Order's</h3>
-             </a>
-             
-            
-             <a href="#">
-                <span class="material-symbols-sharp">mail_outline </span>
-                <h3>Messages</h3>
-                <span class="msg_count">14</span>
-             </a>
-             
-             <a href="#">
-                <span class="material-symbols-sharp">report_gmailerrorred </span>
-                <h3>Reports</h3>
-             </a>
-             <a href="#">
-                <span class="material-symbols-sharp">settings </span>
-                <h3>settings</h3>
-             </a>
-        
-             
-             <a href="#">
-                <span class="material-symbols-sharp">logout </span>
-                <h3>logout</h3>
-             </a>
-               
-  
-  
-            </div>
-  
-        </aside>
-        <!-- --------------
-          end asid
-        -------------------- -->
-  
-        <!-- --------------
-          start main part
-        --------------- -->
-  
-        <main class="addworker">
-          
-  
-  
-            <h1>Add Worker</h1>
-            <form action="/add_worker" method="post" enctype="multipart/form-data">
-                
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="text" name="number" placeholder="Number" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
-                <input type="text" name="addhar" placeholder="Aadhar Card Number" minlength="16" maxlength="16" pattern="[0-9]{16}" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="worker_id" placeholder="Worker ID" required>
-                <select name="services" required>
-                  <option value="" disabled selected>Select Service</option>
-                  <option value="Pipe Installation and Repair">Pipe Installation and Repair</option>
-                  <option value="Water Heater Installation and Repair">Water Heater Installation and Repair</option>
-                  <option value="Drain Cleaning">Drain Cleaning</option>
-                  <option value="Cabinet Installation and Repair">Cabinet Installation and Repair</option>
-                  <option value="Furniture Assembly">Furniture Assembly</option>
-                  <option value="Door and Window Repair/Installation">Door and Window Repair/Installation</option>
-                  <option value="Trim and Molding">Trim and Molding</option>
-                  <option value="Electrical Wiring">Electrical Wiring</option>
-                  <option value="Outlet Installation and Repair">Outlet Installation and Repair</option>
-                  <option value="Circuit Breaker Services">Circuit Breaker Services</option>
-                  <option value="Lighting Installation and Repair">Lighting Installation and Repair</option>
-                  <option value="Interior Painting">Interior Painting</option>
-                  <option value="Exterior Painting">Exterior Painting</option>
-                  <option value="Cabinet Painting/Refinishing">Cabinet Painting/Refinishing</option>
-                  <option value="Carpentry">Carpentry</option>
-                  <!-- Add more options as needed -->
-              </select>
-                <input type="number" name="experience" placeholder="Experience" required>
-                <input type="file" name="photo" required>
-                <button type="submit">Add Worker</button>
-            </form>
-      
-        </main>
-        <!------------------
-           end main
-          ------------------->
-  
-        <!----------------
-          start right main 
-        ---------------------->
-      
-  
-  
-     </div>
-  
+<div class="container">
+    <aside>
+       <div class="top">
+         <div class="logo">
+           <h2>C <span class="danger">Local Connect</span> </h2>
+         </div>
+         <div class="close" id="close_btn">
+          <span class="material-symbols-sharp">
+            close
+            </span>
+         </div>
+       </div>
+       <!-- end top -->
+        <div class="sidebar">
+
+          <a href="/dashboard" >
+            <span class="material-symbols-sharp">grid_view </span>
+            <h3>Dashbord</h3>
+         </a>
+         <a href="#" class="active">
+          <span class="material-symbols-sharp">person_outline </span>
+          <h3>Register workers</h3>
+         <a href="#" >
+            <span class="material-symbols-sharp">person_outline </span>
+            <h3>Order's</h3>
+         </a>
+
+
+         <a href="#">
+            <span class="material-symbols-sharp">mail_outline </span>
+            <h3>Messages</h3>
+            <span class="msg_count">14</span>
+         </a>
+
+         <a href="#">
+            <span class="material-symbols-sharp">report_gmailerrorred </span>
+            <h3>Reports</h3>
+         </a>
+         <a href="#">
+            <span class="material-symbols-sharp">settings </span>
+            <h3>settings</h3>
+         </a>
+
+
+         <a href="/logout"> <!-- Redirect to logout route -->
+            <span class="material-symbols-sharp">logout </span>
+            <h3>logout</h3>
+         </a>
 
 
 
-        
+        </div>
+
+    </aside>
+    <!-- --------------
+      end asid
+    -------------------- -->
+
+    <!-- --------------
+      start main part
+    --------------- -->
+
+    <main class="addworker">
+
+
+
+        <h1>Add Worker</h1>
+        <form action="/add_worker/{{session['provider_id']}}" method="post" enctype="multipart/form-data">
+
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="number" placeholder="Number" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
+            <input type="text" name="addhar" placeholder="Aadhar Card Number" minlength="16" maxlength="16" pattern="[0-9]{16}" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="worker_id" placeholder="Worker ID" required>
+            <select name="services" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="Pipe Installation and Repair">Pipe Installation and Repair</option>
+              <option value="Water Heater Installation and Repair">Water Heater Installation and Repair</option>
+              <option value="Drain Cleaning">Drain Cleaning</option>
+              <option value="Cabinet Installation and Repair">Cabinet Installation and Repair</option>
+              <option value="Furniture Assembly">Furniture Assembly</option>
+              <option value="Door and Window Repair/Installation">Door and Window Repair/Installation</option>
+              <option value="Trim and Molding">Trim and Molding</option>
+              <option value="Electrical Wiring">Electrical Wiring</option>
+              <option value="Outlet Installation and Repair">Outlet Installation and Repair</option>
+              <option value="Circuit Breaker Services">Circuit Breaker Services</option>
+              <option value="Lighting Installation and Repair">Lighting Installation and Repair</option>
+              <option value="Interior Painting">Interior Painting</option>
+              <option value="Exterior Painting">Exterior Painting</option>
+              <option value="Cabinet Painting/Refinishing">Cabinet Painting/Refinishing</option>
+              <option value="Carpentry">Carpentry</option>
+              <!-- Add more options as needed -->
+          </select>
+            <input type="number" name="experience" placeholder="Experience" required>
+            <input type="file" name="photo" required>
+            <button type="submit">Add Worker</button>
+        </form>
+
+    </main>
+    <!------------------
+       end main
+      ------------------->
+
+    <!----------------
+      start right main 
+    ---------------------->
+ </div>
+
+
+
+    
 </body>
 </html>

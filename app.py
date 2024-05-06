@@ -100,14 +100,15 @@ def shopkeeper_login():
         cursor.close()
 
         if provider:
-            session['provider_id'] = provider[0]
-            session['username'] = provider[3]
+            session['provider_id'] = provider[0]  # Store provider's ID in session
+            session['username'] = provider[1]  # Store provider's username (assuming it's the second element)
             flash('Login successful!', 'success')
             return redirect('/dashboard')
         else:
             flash('Invalid username or password', 'error')
 
     return render_template('login.html')
+
 
 
 @app.route('/dashboard')
@@ -129,13 +130,15 @@ def dashboard():
 
 @app.route('/logout')
 def logout():
-    session.clear()
+    session.clear()  # Clear all session data
     flash('You have been logged out', 'success')
     return redirect('/login')
 
-@app.route('/add_worker', methods=['GET', 'POST'])
-def add_worker():
+
+@app.route('/add_worker/<provider_id>', methods=['GET', 'POST'])
+def add_worker(provider_id):
     if request.method == 'POST':
+        # Retrieve worker details from the form
         name = request.form['name']
         number = request.form['number']
         addhar = request.form['addhar']
@@ -145,10 +148,10 @@ def add_worker():
         experience = request.form['experience']
         photo = request.files['photo']
 
+        # Check if a photo is uploaded and if it's of an allowed format
         if photo.filename == '':
             flash('Please upload a photo', 'error')
             return redirect(request.url)
-
         if photo and allowed_file(photo.filename):
             filename = secure_filename(photo.filename)
             photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -156,15 +159,17 @@ def add_worker():
             flash('Invalid file format. Please upload jpg, jpeg, or png files only.', 'error')
             return redirect(request.url)
 
+        # Insert worker details into the database, including the linked provider_id
         cursor = db.cursor()
-        cursor.execute('INSERT INTO workers (name, number, addhar, email, worker_id, services, experience, photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)',
-                       (name, number, addhar, email, worker_id, services, experience, filename))
+        cursor.execute('INSERT INTO workers (provider_id, name, number, addhar, email, worker_id, services, experience, photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)',
+                       (provider_id, name, number, addhar, email, worker_id, services, experience, filename))
         db.commit()
         cursor.close()
         flash('Worker added successfully!', 'success')
         return redirect('/dashboard')  # Redirect to the dashboard page after adding the worker
 
     return render_template('add_workers.html')
+
 
 
 

@@ -28,9 +28,11 @@
               <span class="material-symbols-sharp">grid_view </span>
               <h3>Dashbord</h3>
            </a>
-           <a href="/add_worker" >
-            <span class="material-symbols-sharp">person_outline </span>
+           <a href="{{ url_for('add_worker', provider_id=session['provider_id']) }}">
+            <span class="material-symbols-sharp">person_outline</span>
             <h3>Register workers</h3>
+        </a>
+        
            <a href="#" >
               <span class="material-symbols-sharp">person_outline </span>
               <h3>Order's</h3>
