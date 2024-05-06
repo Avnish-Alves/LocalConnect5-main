@@ -416,17 +416,15 @@ def booking():
 
 @app.route('/reg_workers')
 def reg_workers():
-    if 'username' in session:
-        try:
-            username = session['username']
+    if 'provider_id' in session:
+        
+            provider_id = session['provider_id']
             cursor = db.cursor()
-            cursor.execute('SELECT * FROM workers WHERE username = %s', (username,))
+            cursor.execute('SELECT * FROM workers WHERE provider_id = %s', (provider_id,))
             providers = cursor.fetchall()
             cursor.close()
-            return render_template('workers.html', providers=providers)
-        except Exception as e:
-            print("Error fetching workers:", e)  # Debug print
-            return "Error fetching workers. Please try again later."
+            return render_template('registered_wrokers.html', providers=providers, provider_id=provider_id)
+        
     else:
         return redirect('/login')
 

@@ -67,13 +67,15 @@
 
     <div class="container">
         {% for provider in providers %}
-        <div class="profile">
-            <img src="{{ url_for('static', filename='uploads/' + provider[7]) }}" alt="{{ provider[2] }}">
-            <h2>Name: {{ provider[2] }}</h2>
-            <p>Email id : {{ provider[3] }} </p>
-            <p>Worker id : {{ provider[4] }}</p>
-            <p>Experience : {{ provider[5] }} Years</p>
-        </div>
+            {% if provider[1] == provider_id %} {# Check if provider_id matches #}
+                <div class="profile">
+                    <img src="{{ url_for('static', filename='uploads/' + provider[7]) }}" alt="{{ provider[2] }}">
+                    <h2>Name: {{ provider[2] }}</h2>
+                    <p>Email id : {{ provider[3] }} </p>
+                    <p>Worker id : {{ provider[4] }}</p>
+                    <p>Experience : {{ provider[5] }} Years</p>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
 </body>
