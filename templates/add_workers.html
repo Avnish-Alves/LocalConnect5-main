@@ -77,9 +77,10 @@
   
             <h1>Add Worker</h1>
             <form action="/add_worker" method="post" enctype="multipart/form-data">
+                
                 <input type="text" name="name" placeholder="Name" required>
-                <input type="text" name="number" placeholder="Number" required>
-                <input type="text" name="addhar" placeholder="Addhar Card Number" required>
+                <input type="text" name="number" placeholder="Number" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
+                <input type="text" name="addhar" placeholder="Aadhar Card Number" minlength="16" maxlength="16" pattern="[0-9]{16}" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="text" name="worker_id" placeholder="Worker ID" required>
                 <select name="services" required>

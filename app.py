@@ -137,11 +137,13 @@ def logout():
 def add_worker():
     if request.method == 'POST':
         name = request.form['name']
+        number = request.form['number']
+        addhar = request.form['addhar']
         email = request.form['email']
         worker_id = request.form['worker_id']
+        services = request.form['services']
         experience = request.form['experience']
         photo = request.files['photo']
-        services = request.form['services']
 
         if photo.filename == '':
             flash('Please upload a photo', 'error')
@@ -155,14 +157,15 @@ def add_worker():
             return redirect(request.url)
 
         cursor = db.cursor()
-        cursor.execute('INSERT INTO workers (name, email, worker_id, experience,services, photo) VALUES (%s, %s, %s, %s, %s, %s)',
-                       (name, email, worker_id, experience, services, filename))
+        cursor.execute('INSERT INTO workers (name, number, addhar, email, worker_id, services, experience, photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)',
+                       (name, number, addhar, email, worker_id, services, experience, filename))
         db.commit()
         cursor.close()
         flash('Worker added successfully!', 'success')
-        return redirect('/dashboard')
+        return redirect('/dashboard')  # Redirect to the dashboard page after adding the worker
 
     return render_template('add_workers.html')
+
 
 
 @app.route('/hi')
@@ -419,7 +422,7 @@ def reg_workers():
     if 'provider_id' in session:
         
             provider_id = session['provider_id']
-            cursor = db.cursor()
+            cursor = db.cursor(dictionary=True)
             cursor.execute('SELECT * FROM workers WHERE provider_id = %s', (provider_id,))
             providers = cursor.fetchall()
             cursor.close()

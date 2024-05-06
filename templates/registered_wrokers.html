@@ -67,16 +67,18 @@
 
     <div class="container">
         {% for provider in providers %}
-            {% if provider[1] == provider_id %} {# Check if provider_id matches #}
+            {% if provider['provider_id'] == provider_id %}
                 <div class="profile">
-                    <img src="{{ url_for('static', filename='uploads/' + provider[7]) }}" alt="{{ provider[2] }}">
-                    <h2>Name: {{ provider[2] }}</h2>
-                    <p>Email id : {{ provider[3] }} </p>
-                    <p>Worker id : {{ provider[4] }}</p>
-                    <p>Experience : {{ provider[5] }} Years</p>
+                    <img src="{{ url_for('static', filename='uploads/' + provider['photo']) }}" alt="{{ provider['name'] }}">
+                    <h2>Name: {{ provider['name'] }}</h2>
+                    <p>Email: {{ provider['email'] }}</p>
+                    <p>Worker ID: {{ provider['worker_id'] }}</p>
+                    <p>Experience: {{ provider['experience'] }} Years</p>
+                    <p>Phone: {{ provider['number'] }}</p>
+                    <p>Aadhar: {{ provider['addhar'] }}</p>
                     <!-- Add a delete button/link -->
                     <form action="{{ url_for('delete_worker') }}" method="POST">
-                        <input type="hidden" name="worker_id" value="{{ provider[0] }}">
+                        <input type="hidden" name="worker_id" value="{{ provider['id'] }}">
                         <button type="submit" class="btn-delete">Delete</button>
                     </form>
                 </div>
