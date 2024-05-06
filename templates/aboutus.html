@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/homepagestyle.css')}}">
+
+</head>
+
+
+<body>
+    <script>
+        configObj = {
+          text: "The site is in Beta Development, it may have some flaws!",
+          selectedBackgroundColor: "#000000",
+          selectedTextColor: "#ffffff",
+          bannerHeight: "48px",
+          fontSize: "15px",
+        };
+        function createBanner(obj, pageSimulator) {
+          var swBannerLink = obj.bannerURL;
+          var swBannerTarget = "_blank";
+          var swBannerText = obj.text;
+          var body = document.body;
+          var swBanner = document.createElement("a");
+          var centerDiv = document.createElement("div");
+          var text = document.createElement("span");
+          swBanner.href = swBannerLink;
+          swBanner.target = swBannerTarget;
+          swBanner.style.display = "flex";
+          swBanner.style.justifyContent = "center";
+          swBanner.style.alignItems = "center";
+          swBanner.style.width = "100%";
+          swBanner.style.minHeight = "48px";
+          swBanner.style.maxHeight = "72px";
+          swBanner.style.paddingTop = "8px";
+          swBanner.style.paddingBottom = "8px";
+          swBanner.style.lineHeight = "18px";
+          swBanner.style.textAlign = "center";
+          swBanner.style.textDecoration = "none";
+          swBanner.style.height = obj.bannerHeight;
+          swBanner.style.fontSize = obj.fontSize;
+          text.innerHTML = swBannerText;
+          swBanner.style.backgroundColor = obj.selectedBackgroundColor;
+          swBanner.style.color = obj.selectedTextColor;
+          swBanner.id = "sw-banner";
+          swBanner.classList.add("sw-banner");
+          centerDiv.classList.add("center");
+          centerDiv.append(text);
+          swBanner.append(centerDiv);
+          if (!pageSimulator) {
+            body.insertBefore(swBanner, body.firstChild);
+          } else {
+            pageSimulator.insertBefore(swBanner, pageSimulator.firstChild);
+          }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          createBanner(configObj, null);
+        });
+      </script>
+    <header>
+        <nav>
+            <div class="left">LocalConnect.</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/userpage">Home</a></li>
+                    <li><a href="/contactus">Contact Us</a></li>
+                   
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+
+                My name is <span class="purple">Amulya</span>
+                <div>I am a TY Computer Engineering Student at SJCEM</div>
+
+
+                <span id="element"></span>
+
+            </div>
+            <div class="rightSection">
+                <img src="{{url_for('static',filename='images/Amulya.jpeg' )}}" alt="aboutus">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="firstSection">
+            <div class="leftSection2">
+                <img src="{{url_for('static',filename='images/Avnish.jpeg' )}}" alt="Service Image">
+
+
+
+            </div>
+            <div class="rightSection2">
+                My name is <span class="purple">Avnish</span>
+                <div>I am a TY Computer Engineering Student at SJCEM</div>
+
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="firstSection">
+            <div class="leftSection">
+
+                My name is <span class="purple">Rutika</span>
+                <div>I am a TY Computer Engineering Student at SJCEM</div>
+
+
+                <span id="element"></span>
+
+            </div>
+            <div class="rightSection">
+                <img src="{{url_for('static',filename='images/Rutika.jpeg' )}}" alt="Service Image">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="firstSection">
+            <div class="leftSection2">
+                <img src="{{url_for('static',filename='images/Deeksha.jpeg' )}}" alt="Service Image">
+
+
+            </div>
+            <div class="rightSection2">
+                My name is <span class="purple">Deeksha</span>
+                <div>I am a TY Computer Engineering Student at SJCEM</div>
+
+            </div>
+        </section>
+
+        <hr>
+
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>LocalConnect.</h3>
+
+                <p style="text-align:justify;">
+                    The Local Shop Connect web app is a user-friendly platform designed to facilitate faster connections
+                    between local shops and users. This innovative web app enables users to book a service according to
+                    the users need at any time at the fingertips from their locality.It helps to discover nearby stores,
+                    explore their products and services, and stay updated with exclusive offers and promotions.
+                </p>
+            </div>
+
+            <div style="text-align: center;" class="footer-second">
+                <h3>Services</h3>
+                <ul>
+
+                    <li>Plumbing</li>
+                    <li>Carpentry</li>
+                    <li>Electrician</li>
+                    <li>Mechanic</li>
+
+                </ul>
+            </div>
+
+            <div class="footer-fourth">
+
+                <h3>Contact</h3>
+                <ul>
+                    <li>www.localconnect.com</li>
+                    <li>localconnect@gmail.com</li>
+                    <li>9833445467</li>
+                    <li>Palghar</li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169 www.localconnect.com | All rights reserved
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>

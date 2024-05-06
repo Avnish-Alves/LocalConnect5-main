@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Local Connect
+    </title>
+</head>
+    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application form</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/registerform.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <body>
+    
+    
+            <div class="container">
+                <header>Apply Now</header>
+                <div class="progress-bar">
+                    <div class="step">
+                        <p>Shop Name</p>
+                        <div class="bullet">
+                            <span>1</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>Shop Contact</p>
+                        <div class="bullet">
+                            <span>2</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>Shop GST Number</p>
+                        <div class="bullet">
+                            <span>3</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>About Shop</p>
+                        <div class="bullet">
+                            <span>4</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>Shop Address</p>
+                        <div class="bullet">
+                            <span>5</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>Submit Application</p>
+                        <div class="bullet">
+                            <span>6</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                </div>
+                <div class="form-outer">
+                    <form  id="Registerationform" action="/register" method="POST">
+                        <div class="page slide-page">
+                            <div class="title">Basic Info:</div>
+                            <div class="field">
+                                <div class="label">First Name</div>
+                                <input type="text" id="Fn" name="fname" placeholder="First Name" required />
+                            </div>
+                            <div class="field">
+                                <div class="label">Last Name</div>
+                                <input type="text"  name="lname" id="Ln" placeholder="Last Name" required />
+                            </div>
+                            <div class="field">
+                                <button class="firstNext next">Next</button>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="title">Contact Info:</div>
+                            <div class="field">
+                                <div class="label" >Email Address</div>
+                                <input type="text" id="ml" name="email" placeholder="@Mail.com" required />
+                            </div>
+                            <div class="field">
+                                <div class="label">Phone Number</div>
+                                <input type="tel" name="number" id="Ph" placeholder="Phone number" minlength="10" maxlength="10" required />
+                            </div>
+                            
+                            <div class="field btns">
+                                <button class="prev-1 prev">Previous</button>
+                                <button class="next-1 next">Next</button>
+                            </div>
+                        </div>
+                        <div class="page">
+                            <div class="title">Shop GST Number</div>
+                            <div class="field">
+                                <div class="label">Gst Number</div>
+                                <input type="text"  name="gst" id="GST" placeholder="0000 0000 0000 0000" minlength="16" maxlength="16" required />
+                            </div>
+                        
+                            <div class="field btns">
+                                <button class="prev-2 prev">Previous</button>
+                                <button class="next-2 next">Next</button>
+                            </div>
+                        </div>
+                        <div class="page">
+                            <div class="title">About Shop</div>
+                            <div class="field">
+                                <div class="label">Services Provided</div>
+                                <input type="text" id="sd"  name="shop" placeholder="Services Provided" required />
+                            </div>
+                        
+                            <div class="field btns">
+                                <button class="prev-3 prev">Previous</button>
+                                <button class="next-3 next">Next</button>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="title">Shop Address</div>
+                            <div class="field">
+                                <div class="label">Address</div>
+                                <input type="text"  name="area" id="sa" placeholder="Shop Address" required />
+                            </div>
+                            
+                            <div class="field btns">
+                                <button class="prev-4 prev">Previous</button>
+                                <button class="next-4 next">Next</button>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <div class="title">Login Details:</div>
+                            <div class="field">
+                                <div class="label">Username</div>
+                                <input type="text"  name="username" id="un" placeholder="Username" required />
+                            </div>
+                            <div class="field">
+                                <div class="label">Password</div>
+                                <input type="password"  name="password" id="ps" placeholder="password" required />
+                            </div>
+                            <div class="field btns">
+                                <button class="prev-5 prev">Previous</button>
+                                <button class="submit" type="submit" >Submit</button>
+
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="credit">
+                    <a href="/">Local Connect <span style="color:tomato"></span></a>
+                </div>
+            </div>
+            
+            
+        
+            
+            
+
+    </body>
+</html>

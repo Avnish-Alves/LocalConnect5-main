@@ -1,0 +1,9 @@
+.carousel {
+    position: relative;
+}
+
+.button {
+    margin-top: -300px;
+    position: absolute;
+     text-align: center;
+}

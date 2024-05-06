@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalConnect</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/homepagestyle.css')}}">
+  
+</head>
+
+
+<body>
+    <script>
+        configObj = {
+          text: "The site is in Beta Development, it may have some flaws!",
+          selectedBackgroundColor: "#000000",
+          selectedTextColor: "#ffffff",
+          bannerHeight: "48px",
+          fontSize: "15px",
+        };
+        function createBanner(obj, pageSimulator) {
+          var swBannerLink = obj.bannerURL;
+          var swBannerTarget = "_blank";
+          var swBannerText = obj.text;
+          var body = document.body;
+          var swBanner = document.createElement("a");
+          var centerDiv = document.createElement("div");
+          var text = document.createElement("span");
+          swBanner.href = swBannerLink;
+          swBanner.target = swBannerTarget;
+          swBanner.style.display = "flex";
+          swBanner.style.justifyContent = "center";
+          swBanner.style.alignItems = "center";
+          swBanner.style.width = "100%";
+          swBanner.style.minHeight = "48px";
+          swBanner.style.maxHeight = "72px";
+          swBanner.style.paddingTop = "8px";
+          swBanner.style.paddingBottom = "8px";
+          swBanner.style.lineHeight = "18px";
+          swBanner.style.textAlign = "center";
+          swBanner.style.textDecoration = "none";
+          swBanner.style.height = obj.bannerHeight;
+          swBanner.style.fontSize = obj.fontSize;
+          text.innerHTML = swBannerText;
+          swBanner.style.backgroundColor = obj.selectedBackgroundColor;
+          swBanner.style.color = obj.selectedTextColor;
+          swBanner.id = "sw-banner";
+          swBanner.classList.add("sw-banner");
+          centerDiv.classList.add("center");
+          centerDiv.append(text);
+          swBanner.append(centerDiv);
+          if (!pageSimulator) {
+            body.insertBefore(swBanner, body.firstChild);
+          } else {
+            pageSimulator.insertBefore(swBanner, pageSimulator.firstChild);
+          }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          createBanner(configObj, null);
+        });
+      </script>
+    
+    <header>
+        <nav>
+            <div class="left">LocalConnect.</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contactus">Contact Us</a></li>
+                    <li><a href="#">Become a SP</a></li>
+                    <li><a href="/login"><button class="btn">Login/Sign Up</button></a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+
+                Welcome to Local Connect <span class="purple">Local Connect!</span>
+                <div>where we help you with</div>
+
+
+                <span id="element"></span>
+                <div class="buttons">
+                    <a href="#"><button class="btn">Services</button></a>
+
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="{{url_for('static',filename='images/serviceimg.jpeg' )}}" alt="Service Image">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="firstSection">
+            <div class="leftSection2">
+                <img src="{{url_for('static',filename='images/userfriendly.jpg' )}}" alt="Service Image">
+
+
+
+            </div>
+            <div class="rightSection2">
+                Easy to use!!! <span class="userfriendlyy">
+                    <ul>
+                        <li style="list-style: none;">Simply Select the Service</li>
+                        <li style="list-style: none;">Book an Appointment </li>
+                        <li style="list-style: none;"></li>Enjoy the Service
+                    </ul>
+                </span>
+            </div>
+        </section>
+
+        <hr>
+        
+
+        <!-- review -->
+        <script src="https://use.fontawesome.com/a6f0361695.js"></script>
+
+        <h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
+        <h6 id="fh6">Your review will help us to improve our web hosting quality products, and customer services.</h6>
+
+
+        <form id="feedback" action="">
+            <div class="pinfo">Your personal info</div>
+
+            <div class="form-group">
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input name="name" placeholder="John Doe" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input name="email" type="email" class="form-control" placeholder="john.doe@yahoo.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input name="URL" placeholder="https://google.com" class="form-control" type="url">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pinfo">Rate our overall services.</div>
+
+
+            <div class="form-group">
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+                        <select class="form-control" id="rate">
+                            <option value="1star">1</option>
+                            <option value="2stars">2</option>
+                            <option value="3stars">3</option>
+                            <option value="4stars">4</option>
+                            <option value="5stars">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pinfo">Write your feedback.</div>
+
+
+            <div class="form-group">
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                        <textarea class="form-control" id="review" rows="3"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        </form>
+<!-- Review slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="{{url_for('static',filename='images/p5.jpeg' )}}" alt=Image">
+                    <h3>sandeep</h3>
+                    <p>"Helpfull"</p>
+                </div>
+                <div class="slide">
+                    <img src="{{url_for('static',filename='images/p7.jpeg' )}}" alt="Image">
+                    <h3>Harsh Bari</h3>
+                    <p>"Wonderfull"</p>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <script src="{{url_for('static', filename='js/homepage.js')}}">
+
+        </script>
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>LocalConnect.</h3>
+
+                <p style="text-align:justify;">
+                    The Local Shop Connect web app is a user-friendly platform designed to facilitate faster connections
+                    between local shops and users. This innovative web app enables users to book a service according to
+                    the users need at any time at the fingertips from their locality.It helps to discover nearby stores,
+                    explore their products and services, and stay updated with exclusive offers and promotions.
+                </p>
+            </div>
+
+            <div style="text-align: center;" class="footer-second">
+                <h3>Services</h3>
+                <ul>
+
+                    <li>Plumbing</li>
+                    <li>Carpentry</li>
+                    <li>Electrician</li>
+                    <li>Mechanic</li>
+
+                </ul>
+            </div>
+
+            <div class="footer-fourth">
+
+                <h3>Contact</h3>
+                <ul>
+                    <li>www.localconnect.com</li>
+                    <li>localconnect@gmail.com</li>
+                    <li>9833445467</li>
+                    <li>Palghar</li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169 www.localconnect.com | All rights reserved
+        </div>
+    </footer>
+ 
+    
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed("#element", {
+            strings: ["Plumbing", "Carpentry", "Electrician","Painting", "Mechanic","And Many More Services....."],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>

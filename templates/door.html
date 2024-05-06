@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Providers</title>
+    <style>
+        body {
+            background-color: rgb(23, 167, 172);
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+        header {
+            background-color: rgb(6, 72, 75);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            
+        
+        }
+
+        .profile {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 20%;
+        }
+
+        .profile img {
+            width: 200px; /* Set your desired width */
+            height: 200px; /* Set your desired height */
+            object-fit: cover;
+            
+        }
+
+   
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #06484b;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background-color: #4949cb;
+    }
+    .profile img {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+        object-fit: cover;
+        border-radius: 50%; /* For rounded images */
+    }
+</style>
+
+   
+</head>
+<body>
+    <header>
+        <h1>Workers around You</h1>
+    </header>
+
+    <div class="container">
+        {% for door in door %}
+        <div class="profile">
+            <img src="{{ url_for('static', filename='uploads/' + door[7]) }}" alt="{{ door[2] }}">
+            <h2>Name: {{ door[2] }}</h2>
+            <p>Email id : {{ door[3] }} </p>
+            <p>Worker id : {{ door[4] }}</p>
+            <p>Experience : {{ door[5] }} Years</p>
+            <<a href="/booking"
+            class= "btn"
+          >Book Worker</a>
+
+        </div>
+        {% endfor %}
+
+    </div>
+    
+</body>
+</html>

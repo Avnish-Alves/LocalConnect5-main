@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - LocalConnect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/homepagestyle.css')}}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(23, 167, 172);
+        }
+
+        
+
+        nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(6, 72, 75);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+main hr {
+    border: 0;
+    background: #fefdff;
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(73, 73, 203);
+    font-size: 1.01rem;
+}
+
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .half {
+            width: 48%;
+            background-color: #fefdff;
+            color: rgb(42, 6, 76);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(6, 72, 75);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(73, 73, 203);
+}
+        
+
+        footer {
+            background-color: rgb(6, 72, 75);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer div {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .footer div:last-child {
+            margin-right: 0;
+        }
+
+        .footer ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">LocalConnect.</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contactus">Contact Us</a></li>
+                    <li><a href="/Shopkeeper">Become a SP</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="half">
+            <h2>User Login</h2>
+            <form id="userLoginForm" action="/login" method="POST">
+                <label for="user_email">Username:</label>
+                <input type="text" id="user_email" name="username" required><br>
+                <label for="user_password">Password:</label>
+                <input type="password" id="user_password" name="password" required><br>
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+        </div>
+        <div class="half">
+            <h2>Service Provider Login</h2>
+            <form id="providerLoginForm" action="/shopkeeper_login" method="POST">
+                <label for="provider_email">Username:</label>
+                <input type="text" id="provider_email" name="username" required><br>
+                <label for="provider_password">Password:</label>
+                <input type="password" id="provider_password" name="password" required><br>
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't have an account? <a href="/Shopkeeper">Sign up</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>LocalConnect.</h3>
+                <p style="text-align:justify;">
+                    The Local Shop Connect web app is a user-friendly platform designed to facilitate faster connections
+                    between local shops and users. This innovative web app enables users to book a service according to
+                    the users need at any time at the fingertips from their locality.It helps to discover nearby stores,
+                    explore their products and services, and stay updated with exclusive offers and promotions.
+                </p>
+            </div>
+            <div class="footer-second">
+                <h3>Services</h3>
+                <ul>
+                    <li>Plumbing</li>
+                    <li>Carpentry</li>
+                    <li>Electrician</li>
+                    <li>Mechanic</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <h3>Contact</h3>
+                <ul>
+                    <li>www.localconnect.com</li>
+                    <li><a href="mailto:localconnect@gmail.com">
+                        <i class="fas fa-envelope me-3"></i>
+                        localconnect@gmail.com</a
+                      ></li>
+                    <li>9833445467</li>
+                    <li>Palghar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169 www.localconnect.com | All rights reserved
+        </div>
+    </footer>
+    
+   
+</body>
+
+
+</html>

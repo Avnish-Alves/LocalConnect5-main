@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
+    <title>Service Provider Page</title>
+    <style>
+        body {
+            
+            margin: 0;
+            padding: 0;
+           
+            background-color: rgb(23, 167, 172);
+    color: white;
+    font-family: "Poppins", sans-serif;
+        }
+        
+        
+            header {
+            background-color: rgb(6, 72, 75);
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(6, 72, 75);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(73, 73, 203);
+            font-size: 1.01rem;
+        }
+
+        main hr {
+            border: 0;
+            background: #fefdff;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-card {
+            background-color: #06484b;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            width: 300px;
+            text-align: center; /* Aligning text and buttons to center */
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .service-card-content {
+            padding: 20px;
+        }
+
+        .service-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #ddd;
+            margin: 10px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #06484b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        .button:hover {
+            background-color: #4949cb;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">LocalConnect.</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/userpage">Home</a></li>
+                    <li><a href="aboutus">About Us</a></li>
+                    <li><a href="contactus">Contact Us</a></li>
+                    
+
+                </ul>
+            </div>
+        </nav>
+        <hr>
+        <h1>Services we provide</h1>
+    </header>
+
+    <main>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/image_2024-01-21_143452010.png' )}}" alt="Service Image">
+            <h2>Pipe Installation and Repair</h2>
+            <p>Fixing leaks, repairing or replacing damaged pipes.</p>
+            <a href="/hi" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Fixture Installation and Repair.jpg' )}}" alt="Service Image">
+            <h2>Fixture Installation and Repair</h2>
+            <p>Installing and repairing faucets, sinks, toilets, showers, and other plumbing fixtures.</p>
+            <a href="/hi1" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Fixture Installation and Repair.jpg' )}}" alt="Service Image">
+            <h2>Water Heater Installation and Repair</h2>
+            <p>Installing and maintaining water heaters.</p>
+            <a href="/hi2" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Drain Cleaning.jpg' )}}" alt="Service Image">
+            <h2>Drain Cleaning</h2>
+            <p>Clearing clogged drains and pipes.</p>
+            <a href="/hi3" class="button"> Click Here</a>
+        </div>
+      
+    </main>
+
+    <main>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Cabinet Installation and Repair.jpg' )}}" alt="Service Image">
+            <h2>Cabinet Installation and Repair</h2>
+            <p>Installing or repairing kitchen and bathroom cabinets.</p>
+            <a href="/cabinet" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Furniture Assembly.webp' )}}" alt="Service Image">
+            <h2>Furniture Assembly</h2>
+            <p>Assembling and installing furniture.</p>
+            <a href="/furniture" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Door and Window RepairInstallation.jpg' )}}" alt="Service Image">
+            <h2>Door and Window Repair/Installation</h2>
+            <p>Fixing or installing doors and windows.</p>
+            <a href="/door" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Trim and Molding.jpg' )}}" alt="Service Image">
+            <h2>Trim and Molding</h2>
+            <p>Installing or repairing baseboards, crown molding, and other decorative elements.</p>
+            <a href="/trim" class="button"> Click Here</a>
+        </div>
+       
+    </main>
+    <main>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Electrical Wiring.jpg' )}}" alt="Service Image">
+            <h2>Electrical Wiring</h2>
+            <p>Installing, repairing, or upgrading electrical wiring in homes.</p>
+            <a href="/electrical" class="button"> Click Here</a>
+        </div>
+
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Outlet Installation and Repair.webp' )}}" alt="Service Image">
+            <h2>Outlet Installation and Repair</h2>
+            <p>Adding or repairing electrical outlets.</p>
+            <a href="/outlet" class="button"> Click Here</a>
+        </div>
+
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Circuit Breaker Services.jpg' )}}" alt="Service Image">
+            <h2>Circuit Breaker Services</h2>
+            <p>Repairing or replacing circuit breakers and fuse boxes.</p>
+            <a href="/circuit" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Lighting Installation and Repair.png' )}}" alt="Service Image">
+            <h2>Lighting Installation and Repair</h2>
+            <p>Installing or fixing lighting fixtures, switches, and dimmers.</p>
+            <a href="/lighting" class="button"> Click Here</a>
+        </div>
+    
+    </main>
+    <main>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Interior Painting.jpg' )}}" alt="Service Image">
+            <h2>Interior Painting</h2>
+            <p>Painting walls, ceilings, and other interior surfaces.</p>
+            <a href="/interior" class="button"> Click Here</a>
+        </div>
+
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/exterior painting.webp' )}}" alt="Service Image">
+            <h2>Exterior Painting</h2>
+            <p>Painting the exterior of a home or building.</p>
+            <a href="/exterior" class="button"> Click Here</a>
+        </div>
+
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Cabinet Installation and Repair.jpg' )}}" alt="Service Image">
+            <h2>Cabinet Painting/Refinishing</h2>
+            <p>Updating the appearance of cabinets through painting or refinishing.</p>
+            <a href="/refinishing" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Deck and Fence StainingPainting.jpg' )}}" alt="Service Image">
+            <h2>Deck and Fence Staining/Painting</h2>
+            <p>Applying finishes to protect and enhance outdoor wood structures.</p>
+            <a href="/deck" class="button"> Click Here</a>
+        </div>
+       
+    </main>
+    <main>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Routine Maintenance.jpg' )}}" alt="Service Image">
+            <h2>Routine Maintenance</h2>
+            <p>Performing regular maintenance tasks like oil changes, tire rotations, and fluid checks.</p>
+            <a href="/routine " class="button"> Click Here</a>
+        </div>
+
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Diagnostic Services.jpg' )}}" alt="Service Image">
+            <h2>Diagnostic Services</h2>
+            <p>Identifying and troubleshooting issues with the vehicle's performance.</p>
+            <a href="/diagnostic" class="button"> Click Here</a>
+        </div>
+
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Repairs.jpg' )}}" alt="Service Image">
+            <h2>Repairs</h2>
+            <p>Conducting repairs on various components such as brakes, suspension, and engine systems.</p>
+            <a href="/repairs" class="button"> Click Here</a>
+        </div>
+        <div class="service-card">
+            <img src="{{url_for('static',filename='images/Tire Services.jpg' )}}" alt="Service Image">
+            <h2>Tire Services</h2>
+            <p>Tire replacement, balancing, and alignment.</p>
+            <a href="/tire" class="button"> Click Here</a>
+        </div>
+      
+    </main>
+</body>

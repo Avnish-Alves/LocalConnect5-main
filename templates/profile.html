@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Provider Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: rgb(23, 167, 172);
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        
+
+        nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(6, 72, 75);
+}
+ .left{
+color: #fff;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+main hr {
+    border: 0;
+    background: #fefdff;
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(73, 73, 203);
+    font-size: 1.01rem;
+}
+
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-name {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .profile-details {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .detail {
+            margin: 0 20px;
+        }
+
+        .service {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .service-details {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .reviews {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .review-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .review {
+            width: calc(50% - 40px);
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .review img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .review-text h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .review-text p {
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            background-color: rgb(6, 72, 75);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #1d2836;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="left">LocalConnect.</div>
+        <div class="right">
+            <ul>
+                <li><a href="/homepage.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="/contactus.html">Contact Us</a></li>
+                <li><a href="/Shopkeeper.html">Become a SP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile">
+            <img src="/assets/images/p6.jpeg" alt="Profile Image" class="profile-image" />
+            <h1 class="profile-name">Badal Desai</h1>
+            <div class="profile-details">
+                <div class="detail">
+                    <h3>Address</h3>
+                    <p>Palghar, India</p>
+                </div>
+                <div class="detail">
+                    <h3>Phone</h3>
+                    <p>9324569809</p>
+                </div>
+                <div class="detail">
+                    <h3>Experience</h3>
+                    <p>5 years of experience</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service">
+            <h2>Service Details</h2>
+            <div class="service-details">
+                <div class="detail">
+                    <h3>Plumbing</h3>
+                    <p>Service Description</p>
+                </div>
+                <div class="detail">
+                    <h3>Service Duration</h3>
+                    <p>1 Hour</p>
+                </div>
+                <div class="detail">
+                    <h3>Service Fee</h3>
+                    <p>500 Rs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>Reviews</h2>
+            <div class="slider">
+                <div class="slide">
+                    <img src="https://via.placeholder.com/200" alt="Image" />
+                    <div class="review-text">
+                        <h3>Ben Cris</h3>
+                        <p>We are happy with the services.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/200" alt="Image" />
+                    <div class="review-text">
+                        <h3>Amy Smith</h3>
+                        <p>Excellent work! Highly recommended.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/200" alt="Image" />
+                    <div class="review-text">
+                        <h3>John Doe</h3>
+                        <p>Great service, very professional.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">❮ Prev</button>
+            <button class="next" onclick="moveSlide(1)">Next ❯</button>
+        </div>
+
+        <div class="button-container">
+            <a href="book.html" class="button">Book An Appointment</a>
+        </div>
+    </div>
+</body>
+
+</html>

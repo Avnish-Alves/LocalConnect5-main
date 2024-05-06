@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href=""
+      type="image/x-icon"
+    />
+    
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Numans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/userpage.css')}}" />
+    <title>Local Connect-Shopkeeper</title>
+  </head>
+  <body>
+    <script>
+      configObj = {
+        text: "The site is in Beta Development, it may have some flaws!",
+        selectedBackgroundColor: "#000000",
+        selectedTextColor: "#ffffff",
+        bannerHeight: "48px",
+        fontSize: "15px",
+      };
+      function createBanner(obj, pageSimulator) {
+        var swBannerLink = obj.bannerURL;
+        var swBannerTarget = "_blank";
+        var swBannerText = obj.text;
+        var body = document.body;
+        var swBanner = document.createElement("a");
+        var centerDiv = document.createElement("div");
+        var text = document.createElement("span");
+        swBanner.href = swBannerLink;
+        swBanner.target = swBannerTarget;
+        swBanner.style.display = "flex";
+        swBanner.style.justifyContent = "center";
+        swBanner.style.alignItems = "center";
+        swBanner.style.width = "100%";
+        swBanner.style.minHeight = "48px";
+        swBanner.style.maxHeight = "72px";
+        swBanner.style.paddingTop = "8px";
+        swBanner.style.paddingBottom = "8px";
+        swBanner.style.lineHeight = "18px";
+        swBanner.style.textAlign = "center";
+        swBanner.style.textDecoration = "none";
+        swBanner.style.height = obj.bannerHeight;
+        swBanner.style.fontSize = obj.fontSize;
+        text.innerHTML = swBannerText;
+        swBanner.style.backgroundColor = obj.selectedBackgroundColor;
+        swBanner.style.color = obj.selectedTextColor;
+        swBanner.id = "sw-banner";
+        swBanner.classList.add("sw-banner");
+        centerDiv.classList.add("center");
+        centerDiv.append(text);
+        swBanner.append(centerDiv);
+        if (!pageSimulator) {
+          body.insertBefore(swBanner, body.firstChild);
+        } else {
+          pageSimulator.insertBefore(swBanner, pageSimulator.firstChild);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        createBanner(configObj, null);
+      });
+    </script>
+
+    <!-- Navbar -->
+    <header>
+      <nav>
+          <div class="left">LocalConnect.</div>
+          <div class="right">
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="contactus">Contact Us</a></li>
+                  
+
+
+              </ul>
+          </div>
+      </nav>
+  </header>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <header>
+      <div
+        class="p-5 text-center bg-image"
+        style="background-image: url('/static/images/serviceimg.jpeg'); height: 500px"
+      >
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+              <h1 class="mb-3" style="font-weight: 1px">
+                Want to Expand your Business?
+              </h1>
+              <h4 class="mb-3">Become a registered Shopkeeper now</h4>
+              <a
+                class="btn btn-outline-light btn-lg"
+                role="button"
+                onclick="window.location.href = '/register';"
+               
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Background image -->
+
+
+
+    <!-- Modal -->
+   
+    <h6
+      class="display-6"
+      style="text-align: center; font-size: 2rem; padding-top: 50px"
+    >
+      Why Register  <span style="font-weight: bold">Your Shop</span> At our Website?
+    </h6>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6" style="text-align: center; padding: 5%">
+          <img
+            class="features-img"
+            style="width: 200px"
+            src="/static/images/signup.png"
+            alt=""
+          />
+          <h3>Sign up and Expand</h3>
+          <p>Expand your reach with the help of our app</p>
+        </div>
+
+        <div class="col-lg-4 col-md-12" style="text-align: center; padding: 5%">
+          <img
+            class="features-img"
+            style="width: 200px"
+            src="/static/images/document.svg"
+            alt=""
+          />
+          <h3>Document your work</h3>
+          <p>
+            Add your work to our website for people to view
+          </p>
+        </div>
+
+        <div class="col-lg-4 col-md-6" style="text-align: center; padding: 5%">
+          <img
+            class="features-img"
+            style="width: 200px"
+            src="/static/images/webpage.svg"
+            alt=""
+          />
+          <h3>Find and Provide </h3>
+          <p>Find customers in your area and help them find you.</p>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <!-- Footer -->
+    <footer class="" id="footer">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="background-color: rgb(6, 72, 75);color: white;">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+      
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section style="background-color: rgb(6, 72, 75);color: white;">
+        <div class="container text-center text-md-start mt-2">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text fw-bold mb-4">
+                <i style="margin-right: 10px" class="fas "></i>Local Connect
+              </h6>
+              <b> <p style="text-align:justify;">
+                The Local Shop Connect web app is a user-friendly platform designed to facilitate faster connections
+                between local shops and users. This innovative web app enables users to book a service according to
+                the users need at any time at the fingertips from their locality.It helps to discover nearby stores,
+                explore their products and services, and stay updated with exclusive offers and promotions.
+              </p></b>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Services</h6>
+              <p>
+                <a href="#" style="font-weight: bold;">Plumbing</a>
+              </p>
+              <p>
+                <a href="#" style="font-weight: bold;">Carpentry</a>
+              </p>
+              <p>
+                <a href="#" style="font-weight: bold;">Electrician</a>
+              </p>
+              <p>
+                <a href="#" style="font-weight: bold;">Mechanic</a>
+              </p>
+              
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              
+                
+              
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Valhalla, VH 10012, Utopia</p>
+              <p>
+                <a href="mailto:localconnect@gmail.com">
+                  <i class="fas fa-envelope me-3"></i>
+                  localconnect@gmail.com</a
+                >
+              </p>
+              <p>
+                <a href="tel:+917620175549"
+                  ><i class="fas fa-phone me-3"></i> +91 76201 75549</a
+                >
+              </p>
+              <p>
+                <a href="tel:+919156143753"
+                  ><i class="fas fa-print me-3"></i> +91 91561 43753</a
+                >
+              </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2023 Copyright
+        <a class="text-reset fw-bold" href=""
+          >Local Connect</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- <script src="js/firestore-db-ct.js"></script>
+    <script src="js/script-ct.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+    <!-- firebase -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!--  -->
+<!-- <script> --> 
+<!-- 
+  var firebaseConfig = {
+    apiKey: "AIzaSyBIulU8XC2n0oy_KWnxbeWKBJAunwjrLCg",
+    authDomain: "authentication-aa575.firebaseapp.com",
+    projectId: "authentication-aa575",
+    storageBucket: "authentication-aa575.appspot.com",
+    messagingSenderId: "633252236356",
+    appId: "1:633252236356:web:98f22e4256e188023dc011"
+  }; --> 
+    <!-- // Initialize Firebase
+  firebase.initializeApp(firebaseConfig); -->
+    <!-- </script> -->
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+    ></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBIulU8XC2n0oy_KWnxbeWKBJAunwjrLCg",
+        authDomain: "authentication-aa575.firebaseapp.com",
+        projectId: "authentication-aa575",
+        storageBucket: "authentication-aa575.appspot.com",
+        messagingSenderId: "633252236356",
+        appId: "1:633252236356:web:98f22e4256e188023dc011",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </body>
+</html>
