@@ -119,7 +119,7 @@ def dashboard():
         shop = cursor.fetchall()
         
         # Fetch booking data from the database
-        cursor.execute('SELECT * FROM booking')
+        cursor.execute('SELECT * FROM booking WHERE service_provider_username = %s',(session['username'],) )
         bookings = cursor.fetchall()
         
         cursor.close()
@@ -138,6 +138,7 @@ def logout():
 @app.route('/add_worker/<provider_id>', methods=['GET', 'POST'])
 def add_worker(provider_id):
     if request.method == 'POST':
+        username = session['username']
         # Retrieve worker details from the form
         name = request.form['name']
         number = request.form['number']
@@ -161,8 +162,8 @@ def add_worker(provider_id):
 
         # Insert worker details into the database, including the linked provider_id
         cursor = db.cursor()
-        cursor.execute('INSERT INTO workers (provider_id, name, number, addhar, email, worker_id, services, experience, photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)',
-                       (provider_id, name, number, addhar, email, worker_id, services, experience, filename))
+        cursor.execute('INSERT INTO workers (provider_id, name, number, addhar, email, worker_id, services, experience, photo, serviceprovider_username) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
+                       (provider_id, name, number, addhar, email, worker_id, services, experience, filename, username))
         db.commit()
         cursor.close()
         flash('Worker added successfully!', 'success')
@@ -415,12 +416,27 @@ def booking():
         date = request.form['date']
         time = request.form['time']
         address = request.form['address']
+        
+        # Query to fetch service_provider_username based on workername
         cursor = db.cursor()
-        cursor.execute('INSERT INTO booking (custname,workername, number, email, date,time, address) VALUES (%s, %s, %s, %s, %s,%s,%s)',
-                       (name,workername,phone, email, date, time, address))
-        db.commit()
-        cursor.close()
+        cursor.execute('SELECT serviceprovider_username FROM workers WHERE name = %s', (workername,))
+        service_provider_row = cursor.fetchone()
+        
+        if service_provider_row:  # Check if query returned a result
+            service_provider = service_provider_row[0]
+            
+            # Insert booking details into the booking table
+            cursor.execute('INSERT INTO booking (custname, workername, service_provider_username, number, email, date, time, address) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)',
+                           (name, workername, service_provider, phone, email, date, time, address))
+            
+            db.commit()
+            cursor.close()
+            return redirect(url_for('userpage'))  # Return a success message or redirect to another page
+        # Return an error message
     return render_template('book.html')
+
+
+
 
 @app.route('/reg_workers')
 def reg_workers():
