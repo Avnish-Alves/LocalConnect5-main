@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="static/images/icon2.jpg" type="image/x-icon">
     <title>Plumbing Services</title>
     <style>
         * {
@@ -109,6 +110,20 @@
         .w-full {
           width: 100%;
         }
+
+        #service_provider_username {
+          width: 100%;
+          padding: 12px 24px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          background: white;
+          font-weight: 500;
+          font-size: 16px;
+          color: #6b7280;
+          outline: none;
+          resize: none;
+          margin-bottom: 22px;
+        }
     </style> 
 </head>
 <body>
@@ -138,24 +153,45 @@
                 class="formbold-form-input"
               />
             </div>
-            <div  class="formbold-mb-5">
-              <label for="name" class="formbold-form-label"> service provider name </label>
-              <input
-                type="text"
-                name="service_provider_username"
-                id="service_provider_username"
-                placeholder="service_provider_username"
-                class="formbold-form-input"
-              />
+            
+            <div class="filter-select-box">
+              <label for="wroker" class="formbold-form-label"> Server Provider </label>
+              <select name="service_provider_username" id="service_provider_username" required>
+                <option value="" disabled selected>Select Service</option>
+                <option value="avnish">avnish</option>
+                <option value="amulya">amulya</option>
+                <option value="rutika">rutika</option>
+                <option value="deeksha">deeksha</option>
+                <option value="chaitanya">chaitanya</option>
+                <option value="deepak">deepak</option>
+                <option value="haamid">haamid</option>
+                <option value="sharma">sharma</option>
+                <option value="consultech">consultech</option>
+                <option value="manira">manira</option>
+                <option value="decor">decor</option>
+                <option value="jai">jai</option>
+                <option value="nayan">nayan</option>
+                <option value="vedant">vedant</option>
+                <option value="sohan">sohan</option>
+                <option value="shamita">shamita</option>
+                <option value="ergo">ergo</option>
+                <option value="son">son</option>
+                <option value="mich">mich</option>
+                <option value="Tire Services">Tire Services</option>
+                <!-- Add more options as needed -->
+              </select>  
             </div>
+            
             <div class="formbold-mb-5">
               <label for="phone" class="formbold-form-label"> Phone Number </label>
               <input
-                type="text"
+                type="integer"
                 name="phone"
                 id="phone"
                 placeholder="Enter your phone number"
                 class="formbold-form-input"
+                minlength="10"
+                maxlength="10"
               />
             </div>
             <div class="formbold-mb-5">

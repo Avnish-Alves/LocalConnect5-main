@@ -681,6 +681,7 @@ MEDIA QUERY PHONE
 
 .addworker {
     max-width: 600px;
+    max-height: 600px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -694,6 +695,7 @@ MEDIA QUERY PHONE
 
 .addworker form {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .addworker input[type="text"],
@@ -713,6 +715,7 @@ MEDIA QUERY PHONE
 
 .addworker button {
     width: 100%;
+    height: 50px;
     padding: 10px;
     margin-top: 10px;
     border: none;
@@ -723,6 +726,7 @@ MEDIA QUERY PHONE
 
 .addworker button:hover {
     background-color: #45a049;
+
 }
 
 .addworker a {
@@ -744,4 +748,26 @@ MEDIA QUERY PHONE
 
 .addworker img {
     max-width: 100px;
+}
+
+.acc {
+    max-width: 400px;
+    margin: 20px auto;
+    margin-right: 2px;
+    padding: 10px;
+    background-color: hsl(167, 100%, 16%);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.dec {
+  max-width: 400px;
+  margin: 20px auto;
+  margin-left: 2px;
+  padding: 10px;
+  background-color: hsl(0, 97%, 15%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
 }

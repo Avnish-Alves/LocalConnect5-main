@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard admin</title>
+  <link rel="shortcut icon" href="static/images/icon2.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}">
 </head>
@@ -140,19 +141,24 @@
          <tr>
             <th>Customer Name</th>
             <th>Worker Name</th>
+            <th>Phone</th>
             <th>Date</th>
             <th>Time</th>
             <th>Address</th>
+            <th>status</th>
+            
          </tr>
       </thead>
       <tbody>
          {% for booking in bookings %}
          <tr>
-            <td>{{ booking[1] }}</td>
             <td>{{ booking[2] }}</td>
-            <td>{{ booking[5] }}</td>
+            <td>{{ booking[3] }}</td>
+            <td>{{ booking[4] }}</td>
             <td>{{ booking[6] }}</td>
             <td>{{ booking[7] }}</td>
+            <td>{{ booking[8] }}</td>
+            <td><button class="acc">Accept</button> <button class="dec">Decline</button></td>
          </tr>
          {% endfor %}
       </tbody>
