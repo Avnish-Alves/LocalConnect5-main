@@ -74,6 +74,11 @@
                     <p>Email id : {{ provider[3] }} </p>
                     <p>Worker id : {{ provider[4] }}</p>
                     <p>Experience : {{ provider[5] }} Years</p>
+                    <!-- Add a delete button/link -->
+                    <form action="{{ url_for('delete_worker') }}" method="POST">
+                        <input type="hidden" name="worker_id" value="{{ provider[0] }}">
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </form>
                 </div>
             {% endif %}
         {% endfor %}

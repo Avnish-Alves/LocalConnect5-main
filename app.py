@@ -428,6 +428,17 @@ def reg_workers():
     else:
         return redirect('/login')
 
+@app.route('/delete_worker', methods=['POST'])
+def delete_worker():
+    if request.method == 'POST':
+        worker_id = request.form['worker_id']
+        # Delete worker from the database using the worker_id
+        cursor = db.cursor()
+        cursor.execute('DELETE FROM workers WHERE id = %s', (worker_id,))
+        db.commit()
+        cursor.close()
+        flash('Worker profile deleted successfully!', 'success')
+        return redirect('/reg_workers')
 
     
 
