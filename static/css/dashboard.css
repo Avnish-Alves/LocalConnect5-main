@@ -753,7 +753,7 @@ MEDIA QUERY PHONE
 .acc {
     max-width: 400px;
     margin: 20px auto;
-    margin-right: 2px;
+    margin-left: 2px;
     padding: 10px;
     background-color: hsl(167, 100%, 16%);
     border-radius: 5px;
@@ -764,7 +764,7 @@ MEDIA QUERY PHONE
 .dec {
   max-width: 400px;
   margin: 20px auto;
-  margin-left: 2px;
+  margin-right: 2px;
   padding: 10px;
   background-color: hsl(0, 97%, 15%);
   border-radius: 5px;

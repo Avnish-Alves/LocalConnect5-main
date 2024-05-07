@@ -464,6 +464,20 @@ def delete_worker():
         flash('Worker profile deleted successfully!', 'success')
         return redirect('/reg_workers')
 
+from flask import request
+
+@app.route('/decline_booking', methods=['POST'])
+def decline_booking():
+    if request.method == 'POST':
+        booking_id = request.form['booking_id']
+        # Delete the booking from the database using the booking_id
+        cursor = db.cursor()
+        cursor.execute('DELETE FROM booking WHERE booking_id = %s', (booking_id,))
+        db.commit()
+        cursor.close()
+        flash('Booking declined successfully!', 'success')
+        return redirect('/dashboard')
+
     
 
 if __name__ == '__main__':
