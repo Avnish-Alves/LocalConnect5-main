@@ -409,6 +409,7 @@ def tire():
 @app.route('/booking', methods=['GET', 'POST'])
 def booking():
     if request.method == 'POST':
+        print(request.form)
         name = request.form['name']
         workername = request.form['worker']
         phone = request.form['phone']
@@ -464,7 +465,7 @@ def delete_worker():
         flash('Worker profile deleted successfully!', 'success')
         return redirect('/reg_workers')
 
-from flask import request
+
 
 @app.route('/decline_booking', methods=['POST'])
 def decline_booking():
