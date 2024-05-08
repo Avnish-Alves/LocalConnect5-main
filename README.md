@@ -6,6 +6,7 @@ the users need at any time at the fingertips from their locality.It helps to dis
 explore their products and services, and stay updated with exclusive offers and promotions.
 
 ![image](https://github.com/Avnish-Alves/LocalConnect5-main/assets/109836352/def5eaba-6e51-4835-be00-97c34ce5bd6f)
+
 This is a home page and the user will land here after opening the web-application
 
 ![image](https://github.com/Avnish-Alves/LocalConnect5-main/assets/109836352/ce17b172-8268-457a-b146-d2fb0633456b)
